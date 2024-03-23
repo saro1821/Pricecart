@@ -4,10 +4,9 @@
   "description": "ecommerce using MERN stack",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon backend/server.js",
-    "dev": "set NODE_ENV=development&&nodemon backend/server.js",
-    "prod": "set NODE_ENV=production&&nodemon backend/server.js",
-    "seeder": "node backend/utils/seeder.js"
+    "start": "node server.js",
+    "dev": "set NODE_ENV=development&&node server.js",
+    "prod": "set NODE_ENV=production&&node server.js"
   },
   "author": "saravanan",
   "license": "ISC",
