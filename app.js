@@ -4,12 +4,19 @@ const errorMiddleware = require('./middlewares/error');
 const cookieParser = require('cookie-parser')
 const path = require('path')
 const dotenv = require('dotenv');
+const cors = require('cors');
+
 dotenv.config({path:path.join(__dirname,"config/config.env")});
 
 
 app.use(express.json());
 app.use(cookieParser());
-app.use('/uploads', express.static(path.join(__dirname,'uploads') ) )
+app.use('/uploads', express.static(path.join(__dirname,'uploads') ) );
+app.use(cors());
+app.get('/', (req,res) => {
+    res.setHeader("Access-Control-Allow-Credentials","true")
+    res.send("API is running..");
+});
 
 const products = require('./routes/product')
 const auth = require('./routes/auth')
